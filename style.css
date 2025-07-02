@@ -24,7 +24,7 @@ main {
   flex-direction: column;
   align-items: center; /*center horizontally (cross axis) */
   justify-content: center; /*center vertically (main axis) */
-  min-height: 100vh; /* fill screen vertically */
+  min-height: 95vh; /* fill screen vertically take slightly less than full viewport height so the footer fits below naturally without scroll*/
 }
 
 h1 {
@@ -100,6 +100,34 @@ button:active {
 
 .flip-animation {
   animation: flip 0.6s ease-in-out; /* Applies the flip motion smoothly over 0.6 seconds with acceleration at the beginning and end */
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #2e364b;
+  width: 100%;
+  color: #ecedf0;
+}
+
+footer a {
+  color: #1f6fb0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* focus adds the underline if a user is using the keyboard tab accessibility */
+footer a:hover,
+footer a:focus {
+  color: #f7b02b; /* white on hover for clarity */
+  text-decoration: underline;
+}
+
+footer small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: #8a8fa3;
 }
 
 /* Responsive adjustments for screens smaller than 640px */

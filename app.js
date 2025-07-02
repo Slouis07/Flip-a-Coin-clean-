@@ -58,3 +58,7 @@ document.getElementById("coin-img").addEventListener("keydown", (e) => {
     flipCoin(); // Trigger a coin flip if key is Enter or Spacebar
   }
 });
+
+
+// Set current year in footer 
+document.getElementById("year").textContent = new Date().getFullYear();
