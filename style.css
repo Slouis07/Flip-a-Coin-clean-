@@ -1,50 +1,58 @@
+/* Reset default browser margin and padding, and set box-sizing for predictable sizing */
 * {
-  margin: 0; /*removes default margin*/
-  padding: 0; /*removes default padding*/
-  box-sizing: border-box; /*includes border and padding in size*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Includes padding and border in element's total width/height */
 }
 
+/* Base styles */
 body {
   font-family: "Kanit", Arial, Helvetica, sans-serif;
   font-weight: 600;
   background-color: #404a65;
   color: #ecedf0;
-  min-height: 100vh; /*full screen height*/
+  min-height: 100vh; /* Ensure body covers full viewport height */
 }
 
+/* Header layout and spacing */
 header {
   display: flex;
   flex-direction: column;
-  align-items: center; /*center horizontally (cross axis) */
-  margin-bottom: 10vh;
+  align-items: center; /* Center horizontally */
+  margin-bottom: 10vh; /* Vertical space below header */
 }
 
+/* Main container with centered content */
 main {
   display: flex;
   flex-direction: column;
-  align-items: center; /*center horizontally (cross axis) */
-  justify-content: center; /*center vertically (main axis) */
-  min-height: 95vh; /* fill screen vertically take slightly less than full viewport height so the footer fits below naturally without scroll*/
+  align-items: center;
+  justify-content: center; /* Vertically center content */
+  min-height: 95vh; /* Slightly less than full viewport to accommodate footer */
 }
 
+/* Heading styles with stroke for visual emphasis */
 h1 {
   font-size: 4rem;
   font-weight: 600;
-  -webkit-text-fill-color: #ecedf0; /* Fills the inner text color with a light gray shade */
-  -webkit-text-stroke-width: 2.8px; /* Creates a moderately thick outline around the text */
-  -webkit-text-stroke-color: #3d3f35; /* Colors the text outline with a dark gray/blue tone */
+  -webkit-text-fill-color: #ecedf0;
+  -webkit-text-stroke-width: 2.8px;
+  -webkit-text-stroke-color: #3d3f35;
 }
 
+/* Paragraph text */
 p {
   font-size: 1.5rem;
 }
 
+/* Shadow container centered with margin */
 #shadow {
   margin-top: 50px;
   display: flex;
-  justify-content: center; /*center horizontally */
+  justify-content: center;
 }
 
+/* Button styling for visual hierarchy and interactivity */
 button {
   padding: 12px 36px;
   background-color: #1f6fb0;
@@ -54,7 +62,7 @@ button {
   border: none;
   margin-top: 70px;
   cursor: pointer;
-  transition: all 0.3s ease; /* smooth transition for all changes */
+  transition: all 0.3s ease;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
   font-weight: 600;
 }
@@ -62,46 +70,45 @@ button {
 button:hover {
   background: linear-gradient(145deg, gold, #ffcc00);
   color: #1f1f1f;
-  box-shadow: 0 8px 24px rgba(247, 246, 237, 0.4); /* **brighter glow behind button** (adjust opacity or blur radius to tone it down) */
-  transform: scale(1.05); /* slightly scale up for a pop effect */
+  box-shadow: 0 8px 24px rgba(247, 246, 237, 0.4);
+  transform: scale(1.05);
 }
 
 button:active {
-  transform: scale(0.97); /* press down effect (compression on click) */
-  box-shadow: 0 2px 6px rgba(244, 128, 4, 0.8); /*orange glow appears when user presses down */
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(244, 128, 4, 0.8);
 }
 
+/* Coin result spacing */
 #coin-result {
   margin-top: 50px;
 }
 
+/* Coin image interaction and smooth transform transition */
 #coin-img {
   cursor: pointer;
-  transition: transform 0.6s; /* 💃 When the coin moves or spins, it doesn’t just *snap*—it glides. This gives it that smooth, scroll-worthy animation feel. 0.6s = just long enough for drama, short enough for dopamine. */
+  transition: transform 0.6s;
 }
 
-/* "@keyframes" is a built-in CSS rule — the animation name ("flip") can be anything you choose 
-"flip" is a custom name — you can name it anything. */
+/* Animation keyframes for the coin flip effect */
 @keyframes flip {
   0% {
-    transform: rotateY(0deg); /* Starting position: coin faces forward */
+    transform: rotateY(0deg);
   }
   50% {
-    transform: rotateY(
-      180deg
-    ); /* Midpoint: coin is fully flipped to back side */
+    transform: rotateY(180deg);
   }
   100% {
-    transform: rotateY(
-      360deg
-    ); /* End position: full rotation, back to original facing */
+    transform: rotateY(360deg);
   }
 }
 
+/* Apply flip animation */
 .flip-animation {
-  animation: flip 0.6s ease-in-out; /* Applies the flip motion smoothly over 0.6 seconds with acceleration at the beginning and end */
+  animation: flip 0.6s ease-in-out;
 }
 
+/* Footer styling */
 footer {
   text-align: center;
   padding: 20px 0;
@@ -110,19 +117,20 @@ footer {
   color: #ecedf0;
 }
 
+/* Footer link styles and hover/focus effects for accessibility */
 footer a {
   color: #1f6fb0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* focus adds the underline if a user is using the keyboard tab accessibility */
 footer a:hover,
 footer a:focus {
-  color: #f7b02b; /* white on hover for clarity */
+  color: #f7b02b;
   text-decoration: underline;
 }
 
+/* Footer small text */
 footer small {
   display: block;
   margin-top: 4px;
@@ -130,28 +138,24 @@ footer small {
   color: #8a8fa3;
 }
 
-/* Responsive adjustments for screens smaller than 640px */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 640px) {
   h1 {
-    font-size: 2.2rem; /* Shrinks heading size for smaller screens */
-    -webkit-text-stroke-width: 1.2px; /* Slightly thinner outline to maintain legibility on tight layouts */
+    font-size: 2.2rem;
+    -webkit-text-stroke-width: 1.2px;
   }
-
   p {
-    font-size: 1rem; /* Reduces paragraph text size for readability without overflow */
+    font-size: 1rem;
   }
-
   button {
-    padding: 10px 18px; /* Tightens button padding for compact screens */
-    font-size: 1rem; /* Scales down text inside button */
-    margin-top: 30px; /* Adds some spacing above the button */
+    padding: 10px 18px;
+    font-size: 1rem;
+    margin-top: 30px;
   }
-
   #shadow {
-    margin-top: 20px; /* Lowers space above shadow container to fit better on small screens */
+    margin-top: 20px;
   }
-
   #coin-result {
-    margin-top: 20px; /* Adjusts spacing for result text so it’s not cramped or floating too far */
+    margin-top: 20px;
   }
 }
