@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Test your luck and flip the coin" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+      sizes="any"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Flip the Coin</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Flip the coin</h1>
+        <p>Press the coin or the button to flip the coin</p>
+      </header>
+      <img
+        id="coin-img"
+        src="assets/heads.svg"
+        alt="Coin showing Heads"
+        role="button"
+        tabindex="0"
+      />
+      <div id="shadow">
+        <img src="assets/shadow.svg" alt="the shadow for the coin below" />
+      </div>
+      <p id="coin-result"></p>
+      <button id="random-btn">RANDOM</button>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
